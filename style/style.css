@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+#content {
+    position: relative;
+    min-height: 100%;
+    text-align: center;
+    background-image: url("../images/bedge_grunge_@2X.png");
+}
+* html #content {
+    height: 100%;
+}
+#header {
+    position: relative;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    background-image: url("../images/wild_oliva_@2X.png");
+    color: #adff2f;
+}
+#footer {
+    position: relative;
+    height: 50px;
+    #margin-top: -50px;
+    text-align: center;
+    background-image: url("../images/wild_oliva_@2X.png");
+    color: #adff2f;
+}
+
+#login_form {
+    position: relative;
+    margin:0 auto;
+    width: 300px;
+}
+
+#selection_form {
+    position: relative;
+    width: 500px;
+    margin:0px auto;
+}
+
+#error_text {
+    color: red;
+}
