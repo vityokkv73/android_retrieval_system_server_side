@@ -8,7 +8,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-<div id="content">
+<div id="container">
     <div id="header">
         <h1>Welcome to the Android retrieval system</h1>
     </div>
@@ -17,7 +17,7 @@ session_start();
     <div id="main">
         <form id="selection_form" method="post">
             <fieldset>
-                <legend>Choose the activity you want to see</legend>
+                <legend>Check activities you want to see</legend>
                 <br>
                 <input type="checkbox" name="activity_type[]" value="call">Calls
                 <input type="checkbox" name="activity_type[]" value="sms">SMS
@@ -120,7 +120,7 @@ session_start();
                 if ($result) {
                     while ($row = mysql_fetch_array($result)) {
                         $path_to_image = $row['local_file_path'];
-                        echo "<tr><td>$row[display_name]</td><td>$row[file_path]</td><td>$row[date_added]</td><td><img src='$path_to_image'></td></tr>";
+                        echo "<tr><td>$row[display_name]</td><td>$row[file_path]</td><td>$row[date_added]</td><td><img src=$path_to_image></td></tr>";
                     }
                     echo "</table><br/>";
                 }
@@ -130,10 +130,12 @@ session_start();
         }
         ?>
     </div>
-</div>
-<div id="footer">
-    <br/>
-    Created by DeerHunter (Viktor Isakov), 2013
+    <div id="dummy">
+    </div>
+    <div id="footer">
+        <br/>
+        Created by DeerHunter (Viktor Isakov), 2013
+    </div>
 </div>
 </body>
 </html>

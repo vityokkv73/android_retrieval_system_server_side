@@ -11,7 +11,7 @@ if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['f
     $db_password = "1111";
     $connection = mysql_connect($host, $db_user, $db_password);
     if (!$connection) {
-        $_SESSION['registration_error_text'] = 123;
+        $_SESSION['registration_error_text'] = 'Problem with registration';
         header('Location: registration.php');
         exit;
     }
@@ -23,6 +23,7 @@ if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['f
         $_SESSION['registration_error_text'] = 'Problem with registration';
         mysql_close($connection);
         header('Location: registration.php');
+        exit;
     }
     else{
         $md5_password = md5($password);
@@ -32,6 +33,7 @@ if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['f
             $_SESSION['registration_error_text'] = 'Problem with registration';
             mysql_close($connection);
             header('Location: registration.php');
+            exit;
         }
         else{
             $q = mysql_query ($select_query);
@@ -39,6 +41,7 @@ if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['f
             $_SESSION['user_id'] = $row['_id'];
             mysql_close($connection);
             header('Location: main.php');
+            exit;
         }
     }
 } else {

@@ -1,5 +1,5 @@
 <?php
-include 'Packet.php';
+include_once 'Packet.php';
 class SMS extends Packet
 {
     var $sender;

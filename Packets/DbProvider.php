@@ -36,7 +36,7 @@ class DbProvider
         mysql_select_db(DbProvider::DATABASE_NAME);
 
         return mysql_query("INSERT INTO sms (sender, recipient, sender_phone_number, recipient_phone_number, time, sms_body, user_id) values
-                          ( \"$sms->sender\", \"$sms->recipient\" , \"$sms->sender_number\" , \"$sms->recipient__number\", FROM_UNIXTIME($sms->time) , $sms->text, $id) ");
+                          ( \"$sms->sender\", \"$sms->recipient\" , \"$sms->sender_number\" , \"$sms->recipient_number\", FROM_UNIXTIME($sms->time) , \"$sms->text\", $id) ");
     }
 
     function writeCallIntoDB(&$call, $id)

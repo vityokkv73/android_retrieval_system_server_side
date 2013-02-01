@@ -21,11 +21,11 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
             $_SESSION['user_id'] = $row['_id'];
             mysql_close($connection);
             header('Location: main.php');
+            exit;
         }
         mysql_close($connection);
     }
-} else {
-    $_SESSION['error_message'] = 234;
-    header('Location: index.php');
 }
+$_SESSION['error_message'] = 'The user with this login or/and password does not exist';
+header('Location: index.php');
 ?>

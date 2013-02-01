@@ -1,5 +1,5 @@
 <?php
-include 'Packet.php';
+include_once 'Packet.php';
 class Call extends Packet
 {
     var $caller;

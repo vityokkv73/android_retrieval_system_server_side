@@ -8,12 +8,12 @@ session_start();
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-<div id="content">
+<div id="container">
     <div id="header">
         <h1>Welcome to the Android retrieval system</h1>
     </div>
     <div id="main">
-        <div id="error_message">
+        <div id="error_text">
             <?php
             if (!empty($_SESSION['registration_error_text'])){
                 echo  $_SESSION['registration_error_text'];
@@ -50,10 +50,12 @@ session_start();
             </fieldset>
         </form>
     </div>
-</div>
+    <div id="dummy">
+        </div>
 <div id="footer">
     <br/>
     Created by DeerHunter (Viktor Isakov), 2013
+</div>
 </div>
 </body>
 </html>

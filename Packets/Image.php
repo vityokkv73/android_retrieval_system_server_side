@@ -1,5 +1,5 @@
 <?php
-include 'Packet.php';
+include_once 'Packet.php';
 class Image extends Packet
 {
     var $display_name;
@@ -26,9 +26,9 @@ class Image extends Packet
     {
         $path_to_thumbnails = "./user_images/$id";
         mkdir($path_to_thumbnails, 0700, true);
-        $extension = preg_replace("/.*?\./", '', $this->display_name);
-        $local_file_path =  $path_to_thumbnails ."/" . mt_rand(0, 10000000) . "($this->store_id)" . $extension;
-        $fp=fopen($local_file_path, 'wb');
+        $extension = end(explode('.', $this->display_name));
+        $this->local_file_path =  $path_to_thumbnails ."/" . mt_rand(0, 10000000) . "($this->store_id)." . $extension;
+        $fp=fopen($this->local_file_path, 'wb');
         fwrite($fp, $this->image_array);
         fclose($fp);
     }
